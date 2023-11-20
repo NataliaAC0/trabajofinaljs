@@ -1,0 +1,770 @@
+/* Estilos generales para el body */
+body,
+html {
+   margin: 0;
+   padding: 0;
+   font-family: 'Montserrat', sans-serif;
+   background-color: #fcfcf7;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+/* Contenedor principal */
+.main-container {
+   flex: 1;
+   /*MANTENER CONTENEDOR DE FOOTER ABAJO DEL TODO DE LA PÁGINA*/
+}
+
+/* BARRA DE NAVEGACIÓN */
+.navbar {
+   background-color: rgba(0, 0, 0, 0.8);
+   /*TRANSPARENCIA*/
+   position: fixed;
+   width: 100%;
+   z-index: 1000;
+}
+
+.container {
+   width: 70%;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 0;
+}
+
+.logo img {
+   height: 50px;
+}
+
+ul {
+   list-style: none;
+   display: flex;
+   margin: 0;
+   padding: 0;
+}
+
+ul li {
+   margin: 0 15px;
+   text-transform: capitalize;
+   position: relative;
+}
+
+ul li a {
+   text-decoration: none;
+   color: white;
+   transition: color 0.3s ease;
+}
+
+ul li a:after {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background-color: #fff5cf;
+   bottom: -4px;
+   left: 0;
+   transform: scaleX(0);
+   transition: transform 0.3s ease;
+   /*TRANSICIÓN DE LÍNEA*/
+}
+
+ul li a:hover {
+   color: #e0d7c0;
+}
+
+ul li a:hover:after {
+   transform: scaleX(1);
+}
+
+.menu-btn {
+   display: none;
+   cursor: pointer;
+}
+
+.bar {
+   width: 25px;
+   height: 3px;
+   background-color: #fff;
+   margin: 5px 0;
+}
+
+/* menu hamburguesa móvil */
+@media (max-width: 768px) {
+   .menu-btn {
+      display: block;
+   }
+
+   .logo img {
+      height: 40px;
+   }
+
+   .navbar-items {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1;
+   }
+
+   .navbar-items.active {
+      display: flex;
+   }
+
+   ul {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+   }
+
+   .navbar-items li {
+      margin-bottom: 30px; 
+   }
+
+   ul li a:after {
+      display: none; 
+   }
+
+   ul li a:hover {
+      color: white; 
+   }
+
+   ul li a:hover:after {
+      transform: scaleX(0); 
+   }
+}
+
+
+/* Imagen principal efecto parallax*/
+.imagen-principal-parallax {
+   width: 100%;
+   height: 95vh;
+   overflow: hidden;
+   position: relative;
+}
+
+.parallax {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 150%;
+   transform: translateY(0);
+   transition: transform 0.3s ease-out;
+}
+
+.parallax img {
+   width: 100%;
+   height: auto;
+   display: block;
+}
+
+.linea-principal {
+   width: 100%;
+   height: 3rem;
+   background-color: black;
+   border: none;
+}
+
+/* Media query solo para pantallas de móvil imagen principal */
+@media only screen and (max-width: 767px) {
+
+   body,
+   html {
+      overflow-x: hidden;
+   }
+
+   .imagen-principal-parallax,
+   .parallax,
+   .parallax img,
+   .linea-principal {
+      display: none;
+   }
+
+   .navbar {
+      position: relative;
+   }
+}
+
+
+/*Primera sección sobre nosotros*/
+section .sobre-nosotros {
+   text-align: center;
+   height: auto;
+   margin-top: 1rem;
+}
+
+section .sobre-nosotros h1 {
+   font-size: 2rem;
+   color: black;
+   text-align: center;
+   margin: 2rem auto 1rem auto;
+   text-transform: capitalize;
+}
+
+/*Crear una línea justo debajo de sobre nosotros*/
+.linea-sobre-nosotros {
+   width: 13%;
+   height: 1px;
+   background-color: black;
+   margin: 0 auto 3rem auto;
+}
+
+/* Modificar contenedores para que la imagen salga a la dcha y el texto a la izq*/
+section .texto-imagen-sobrenosotros {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   margin-bottom: 0rem;
+}
+
+/* Modificar p texto- sobrenosotros*/
+section .texto-imagen-sobrenosotros p {
+   /* ACORDARSE DE HACER RESPONSIVE PARA ORDENADOR*/
+   color: black;
+   margin: 8rem 5rem 0rem 7rem;
+   width: 60%;
+   text-align: center;
+   line-height: 1.6rem;
+   font-size: 1rem;
+}
+
+section .texto-imagen-sobrenosotros img {
+   width: 40%;
+   height: auto;
+   margin: 0 7rem 0 0;
+   border: 1px solid black;
+}
+
+/* Media query para dispositivos móviles SOBRE NOSOTROS*/
+@media only screen and (max-width: 767px) {
+   section .sobre-nosotros h1 {
+      margin-top: 1rem;
+      font-size: 24px;
+   }
+
+   .linea-sobre-nosotros {
+      display: none;
+      /* ocultar línea*/
+   }
+
+   section .texto-imagen-sobrenosotros {
+      flex-direction: column;
+      /* cambiamos a columna*/
+      align-items: center;
+   }
+
+   section .texto-imagen-sobrenosotros p {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      width: 90%;
+      text-align: justify;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+   section .texto-imagen-sobrenosotros img {
+      width: 90%;
+      margin: 1rem 0;
+      margin-left: auto;
+      margin-right: auto;
+   }
+}
+
+/*Segunda sección nuestros servicios*/
+.linea-nuestros-servicios {
+   width: 16%;
+   height: 1px;
+   background-color: black;
+   margin: 0 auto 3rem auto;
+}
+
+section .nuestros-servicios {
+   text-align: center;
+   height: auto;
+}
+
+section .nuestros-servicios h1 {
+   font-size: 2rem;
+   color: black;
+   text-align: center;
+   margin: 3rem auto 1rem auto;
+   text-transform: capitalize;
+}
+
+/* Modificar contenedores para que la imagen salga a la dcha y el texto a la izq*/
+section .texto-imagen-nuestrosservicios {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   margin-bottom: 0.4rem;
+}
+
+/* Modificar p texto- sobrenosotros*/
+section .texto-imagen-nuestrosservicios p {
+   /* ACORDARSE DE HACER RESPONSIVE PARA ORDENADOR*/
+   color: black;
+   margin: 1rem 8rem 0rem 1rem;
+   width: 45%;
+   text-align: center;
+   line-height: 1.6rem;
+   font-size: 1rem;
+}
+
+section .texto-imagen-nuestrosservicios img {
+   width: 55%;
+   height: auto;
+   margin: 0 5rem 0 7rem;
+   border: 1px solid black;
+}
+
+/* Media query para dispositivos móviles NUESTROS SERVICIOS*/
+/*Segunda sección nuestros servicios*/
+.linea-nuestros-servicios {
+   width: 16%;
+   height: 1px;
+   background-color: black;
+   margin: 0 auto 3rem auto;
+}
+
+section .nuestros-servicios {
+   text-align: center;
+   height: auto;
+}
+
+section .nuestros-servicios h1 {
+   font-size: 2rem;
+   color: black;
+   text-align: center;
+   margin: 3rem auto 1rem auto;
+   text-transform: capitalize;
+}
+
+/* Modificar contenedores para que la imagen salga a la dcha y el texto a la izq*/
+section .texto-imagen-nuestrosservicios {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   margin-bottom: 0.4rem;
+}
+
+/* Modificar p texto- sobrenosotros*/
+section .texto-imagen-nuestrosservicios p {
+   /* ACORDARSE DE HACER RESPONSIVE PARA ORDENADOR*/
+   color: black;
+   margin: 1rem 8rem 0rem 1rem;
+   width: 45%;
+   text-align: center;
+   line-height: 1.6rem;
+   font-size: 1rem;
+}
+
+section .texto-imagen-nuestrosservicios img {
+   width: 55%;
+   height: auto;
+   margin: 0 5rem 0 7rem;
+   border: 1px solid black;
+}
+
+/* Media query para dispositivos móviles NUESTROS SERVICIOS*/
+@media only screen and (max-width: 767px) {
+   section .nuestros-servicios h1 {
+      margin-top: 1rem;
+      font-size: 24px;
+   }
+
+   .linea-nuestros-servicios {
+      display: none;
+      /* ocultar línea*/
+   }
+
+   section .texto-imagen-nuestrosservicios {
+      flex-direction: column;
+      /* cambiamos a columna*/
+      align-items: center;
+   }
+
+   section .texto-imagen-nuestrosservicios p {
+      order: 1;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      width: 90%;
+      text-align: justify;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+   section .texto-imagen-nuestrosservicios img {
+      order: 2;
+      width: 90%;
+      margin: 1rem 0;
+      margin-left: auto;
+      margin-right: auto;
+   }
+}
+
+/* CARRUSEL */
+section .nuestros-productos h1 {
+   font-size: 2rem;
+   color: black;
+   text-align: center;
+   margin: 3rem auto 1rem auto;
+   text-transform: capitalize;
+}
+
+.solo-movil {
+   display: none;
+}
+
+.linea-nuestros-productos {
+   width: 16%;
+   height: 1px;
+   background-color: black;
+   margin: 0 auto 2rem auto;
+}
+
+.swiper {
+   margin-top: 2rem;
+   width: 100%;
+   height: 100%;
+   position: relative;
+}
+
+.swiper-slide {
+   text-align: center;
+   font-size: 18px;
+   background: #fcfcf7;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   position: relative;
+}
+
+.swiper-slide img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.button-swiper {
+   position: absolute;
+   bottom: 5px;
+   /* Ajusta la distancia desde la parte inferior del carrusel */
+   margin-top: 30px;
+   margin-bottom: 15px;
+   text-transform: capitalize;
+   font-weight: bold;
+   background-color: #595959;
+   border-radius: 20px;
+   color: #fff;
+   border: none;
+   padding: 15px 30px;
+   cursor: pointer;
+   font-size: 16px;
+   border: 1px solid black;
+}
+
+.button-swiper:hover {
+   background-color: #7d7d7d;
+   color: #fff;
+}
+
+.button-swiper a {
+   text-decoration: none;
+   color: white;
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+   color: #fff !important;
+   font-size: 24px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+   color: #e0d7c0 !important;
+   /*poner important porque sino, se pondrá como predeterminados los del plugin*/
+}
+
+.swiper-pagination-bullet {
+   background-color: #fff !important;
+}
+
+.swiper-pagination-bullet-active {
+   background-color: #fff !important;
+}
+
+/* Estilos personalizados para el progressbar */
+.swiper-pagination-progressbar-fill {
+   background-color: black !important;
+}
+
+.section div .texto-button-swiper {
+   text-transform: capitalize;
+   text-decoration: none;
+   cursor: pointer;
+   color: white;
+   transition: color 0.5s ease;
+}
+
+/* VErsión móvil carrusel*/
+@media only screen and (max-width: 767px) {
+
+   .mySwiper,
+   .linea-nuestros-productos {
+      display: none !important;
+   }
+
+   section .nuestros-productos h1 {
+      margin-top: 1rem;
+      font-size: 24px;
+   }
+
+   .solo-movil {
+      display: block;
+      text-align: center;
+   }
+
+   .solo-movil img {
+      border-radius: 20px;
+      width: 90%;
+      margin: 1rem 0;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid black;
+   }
+
+   .solo-movil button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 14px;
+      text-align: center;
+      text-decoration: none;
+      border: 1px solid black;
+      color: white;
+      background-color: #595959;
+      border-radius: 5px;
+      margin-bottom: 5px;
+   }
+}
+
+/* CUARTA SECCIÓN NUESTRO EQUIPO*/
+
+.linea-nuestro-equipo {
+   width: 14%;
+   height: 1px;
+   background-color: black;
+   margin: 0 auto 3rem auto;
+}
+
+.nuestroequipo h1 {
+   font-size: 2rem;
+   color: black;
+   text-align: center;
+   margin: 3rem auto 1rem auto;
+   text-transform: capitalize;
+}
+
+.nuestro-equipo {
+   display: flex;
+   justify-content: space-around;
+   margin: 40px 200px 20px 200px;
+}
+
+.nuestro-equipo div {
+   text-align: center;
+}
+
+.nuestroequipo img {
+   border-radius: 50%;
+   width: 40%;
+   height: auto;
+}
+
+/* Versión móvil nuestro equipo */
+@media only screen and (max-width: 767px) {
+   .linea-nuestro-equipo {
+      display: none;
+   }
+
+   .nuestro-equipo {
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+   }
+
+   .nuestroequipo img {
+      width: 40%;
+   }
+
+   section .nuestro-equipo h1 {
+      margin-top: 1rem;
+      font-size: 24px;
+   }
+}
+
+/*QUINTA SECCIÓN NUESTRO COMPROMISO*/
+
+.linea-nuestro-compromiso {
+   width: 19%;
+   height: 1px;
+   background-color: black;
+   margin: 0 auto 3rem auto;
+}
+
+.nuestrocompromiso h1 {
+   font-size: 2rem;
+   color: black;
+   text-align: center;
+   margin: 3rem auto 1rem auto;
+   text-transform: capitalize;
+}
+
+.nuestrocompromiso-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.iconos-nuestro-compromiso {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 2rem 2rem 0rem 2rem;
+}
+
+.icon {
+   width: 50px;
+   height: 50px;
+   margin-bottom: 0.5rem;
+   opacity: 0.8;
+}
+
+.negrita {
+   font-weight: bold;
+   margin: 0.5rem 0 0rem 0;
+   text-align: center;
+}
+
+.texto-normal {
+   margin: 0.52rem 0 5rem 0;
+   text-align: center;
+}
+
+/* version movil nuestro compromiso*/
+@media only screen and (max-width: 767px) {
+   .linea-nuestro-compromiso {
+      display: none;
+      /* Ocultar la línea en versiones móviles */
+   }
+
+   .icon {
+      width: 30px;
+      /* Ajustar el tamaño de los iconos para móviles */
+      height: 30px;
+   }
+
+   .icono-container {
+      text-align: center;
+      margin: 1rem;
+   }
+
+   .nuestrocompromiso {
+      min-height: 120vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .texto-normal {
+      margin: 0;
+   }
+}
+
+
+/* FOOTER */
+footer {
+   background-color: black;
+   color: white;
+   padding: 20px 0;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.footer-section {
+   text-align: center;
+   margin: 10px;
+   font-size: 11px;
+}
+
+ul.footer-links {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+ul.footer-links li a {
+   text-decoration: none;
+   color: white;
+   transition: color 0.3s ease;
+   position: relative;
+}
+
+ul.footer-links li a::after {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 1px;
+   background-color: #e0d7c0;
+   bottom: -3px;
+   left: 0;
+   transform: scaleX(0);
+   transition: transform 0.3s ease;
+}
+
+ul.footer-links li a:hover::after {
+   transform: scaleX(1);
+   /* Expandir línea cuando se hace hover*/
+}
+
+ul.footer-links li:last-child {
+   margin-top: auto;
+}
+
+.footer-section img {
+   margin-bottom: 20px;
+   height: 40px;
+}
+
+/*Imágenes redes sociales*/
+footer .social-icons {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+footer .social-icons a {
+   display: flex;
+   align-items: center;
+}
+
+/* Establecer altura y margen entre los iconos*/
+footer .social-icons img {
+   height: 18px;
+   margin: 10px;
+}

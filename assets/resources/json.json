@@ -1,0 +1,25 @@
+{
+   "equipo": [
+      {
+         "nombre": "Ana",
+         "apellido": "Sánchez",
+         "rol": "Experta En Iluminación",
+         "numero": "+34 600 582 128",
+         "imagen": "assets/images/index/person-1.jpg"
+      },
+      {
+         "nombre": "Ignacio",
+         "apellido": "Pérez",
+         "rol": "Experto En Encimeras y Vitrocerámicas",
+         "numero": "+34 640 567 122",
+         "imagen": "assets/images/index/person-2.jpg"
+      },
+      {
+         "nombre": "María",
+         "apellido": "González",
+         "rol": "Experta En Suelos",
+         "numero": "+34 784 238 973",
+         "imagen": "assets/images/index/person-3.jpg"
+      }
+   ]
+}

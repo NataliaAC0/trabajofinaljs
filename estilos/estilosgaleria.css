@@ -1,0 +1,436 @@
+/* Estilos generales para el body */
+body,
+html {
+   margin: 0;
+   padding: 0;
+   font-family: 'Montserrat', sans-serif;
+   background-color: #fcfcf7;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+/* Contenedor principal */
+.main-container {
+   flex: 1;
+   /*MANTENER CONTENEDOR DE FOOTER ABAJO DEL TODO DE LA PÁGINA*/
+}
+
+/* BARRA DE NAVEGACIÓN */
+.navbar {
+   background-color: rgba(0, 0, 0, 0.8);
+   /*TRANSPARENCIA*/
+   position: fixed;
+   width: 100%;
+   z-index: 1000;
+}
+
+.container {
+   width: 70%;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 0;
+}
+
+.logo img {
+   height: 50px;
+}
+
+ul {
+   list-style: none;
+   display: flex;
+   margin: 0;
+   padding: 0;
+}
+
+ul li {
+   margin: 0 15px;
+   text-transform: capitalize;
+   position: relative;
+}
+
+ul li a {
+   text-decoration: none;
+   color: white;
+   transition: color 0.3s ease;
+}
+
+ul li a:after {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background-color: #fff5cf;
+   bottom: -4px;
+   left: 0;
+   transform: scaleX(0);
+   transition: transform 0.3s ease;
+   /*TRANSICIÓN DE LÍNEA*/
+}
+
+ul li a:hover {
+   color: #e0d7c0;
+}
+
+ul li a:hover:after {
+   transform: scaleX(1);
+}
+
+.menu-btn {
+   display: none;
+   cursor: pointer;
+}
+
+.bar {
+   width: 25px;
+   height: 3px;
+   background-color: #fff;
+   margin: 5px 0;
+}
+
+/* menu hamburguesa móvil */
+@media (max-width: 768px) {
+   .menu-btn {
+      display: block;
+   }
+
+   .logo img {
+      height: 40px;
+   }
+
+   .navbar-items {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1;
+   }
+
+   .navbar-items.active {
+      display: flex;
+   }
+
+   ul {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+   }
+
+   .navbar-items li {
+      margin-bottom: 30px; 
+   }
+
+   ul li a:after {
+      display: none; 
+   }
+
+   ul li a:hover {
+      color: white; 
+   }
+
+   ul li a:hover:after {
+      transform: scaleX(0); 
+   }
+}
+
+
+/* Imagen principal efecto parallax*/
+.imagen-principal-galeria-parallax {
+   width: 100%;
+   height: 80vh;
+   overflow: hidden;
+   position: relative;
+}
+
+.parallax {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 150%;
+   transform: translateY(0);
+   transition: transform 0.3s ease-out;
+}
+
+.parallax img {
+   width: 100%;
+   height: auto;
+   display: block;
+}
+
+/* Poner la imagen superpuesta sobre la imagen principal de la galería*/
+.galeria-png {
+   position: absolute;
+   top: 60%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 2;
+   height: auto;
+}
+
+.linea-principal {
+   width: 100%;
+   height: 3rem;
+   background-color: black;
+   border: none;
+}
+
+/* Media query solo para pantallas de móvil imagen principal */
+@media only screen and (max-width: 767px) {
+
+   body,
+   html {
+      overflow-x: hidden;
+   }
+
+   .imagen-principal-galeria-parallax,
+   .imagen-principal-parallax,
+   .parallax,
+   .parallax img,
+   .linea-principal,
+   .galeria-png {
+      display: none;
+   }
+
+   .navbar {
+      position: relative;
+   }
+}
+
+/* Galería CSS */
+.galeria h1 {
+   display: none;
+}
+
+.gallery-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   padding: 20px;
+}
+
+.gallery-item {
+   margin: 10px;
+   overflow: hidden;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   cursor: pointer;
+   flex: 0 0 calc(33.33% - 20px);
+   max-width: calc(33.33% - 20px);
+   box-sizing: border-box;
+}
+
+.gallery-item img {
+   width: 100%;
+   height: auto;
+   border-radius: 8px;
+   transition: transform 0.3s ease-in-out;
+   z-index: 1001;
+}
+
+.gallery-item:hover img {
+   transform: scale(1.1);
+}
+
+/* Estilos para el modal, ventana emergente */
+.modal {
+   display: none;
+   position: fixed;
+   z-index: 2;
+   top: 80px;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgb(0, 0, 0);
+   background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+   position: absolute;
+   max-width: 100%;
+   max-height: 100%;
+}
+
+/* Estilo de botón de cierre*/
+.close {
+   position: absolute;
+   top: 20px;
+   /*Distancia a la que se debe posicionar la x*/
+   right: 20px;
+   color: #f1f1f1;
+   font-size: 40px;
+   font-weight: bold;
+   cursor: pointer;
+   z-index: 2;
+}
+
+/* Estilo de prev y next */
+.nav-btn {
+   position: absolute;
+   top: 45%;
+   font-size: 30px;
+   font-weight: bold;
+   background-color: transparent;
+   border: none;
+   color: #f1f1f1;
+   cursor: pointer;
+   transition: color 0.3s ease;
+   z-index: 2;
+}
+
+#prev-btn {
+   left: 20px;
+}
+
+#next-btn {
+   right: 20px;
+}
+
+.nav-btn:hover {
+   color: #e0d7c0;
+}
+
+/* Ocultar*/
+@media only screen and (max-width: 767px) {
+
+   .modal,
+   .modal-content,
+   .close,
+   .nav-btn {
+      display: none;
+   }
+}
+
+
+/* Cuando el modal está abierto*/
+body.modal-open {
+   overflow: hidden;
+}
+
+/* La barra de desplazamiento aparece en la pág principal cuando no está el modal abierto (o sea, cuando las imágenes están abiertas)*/
+body:not(.modal-open) {
+   overflow-y: scroll;
+}
+
+/* ocultar barra desplazamiento del modal*/
+.modal::-webkit-scrollbar {
+   display: none;
+}
+
+.modal {
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+}
+
+/* version móvil galería css*/
+@media only screen and (max-width: 767px) {
+   .gallery-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+   }
+
+   .gallery-item {
+      flex: 0 0 100%;
+      max-width: 90%;
+   }
+
+   .galeria h1 {
+      display: block;
+      font-size: 24px;
+      margin-top: 2.3rem;
+      text-align: center;
+   }
+
+   .gallery-item img {
+      pointer-events: none;
+   }
+}
+
+/* FOOTER */
+footer {
+   margin-top: auto;
+   background-color: black;
+   color: white;
+   padding: 20px 0;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.footer-section {
+   text-align: center;
+   margin: 10px;
+   font-size: 11px;
+}
+
+ul.footer-links {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+ul.footer-links li {
+   margin: 0;
+}
+
+ul.footer-links li a {
+   text-decoration: none;
+   color: white;
+   transition: color 0.3s ease;
+   position: relative;
+}
+
+ul.footer-links li a::after {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 1px;
+   background-color: #e0d7c0;
+   bottom: -3px;
+   left: 0;
+   transform: scaleX(0);
+   transition: transform 0.3s ease;
+}
+
+ul.footer-links li a:hover::after {
+   transform: scaleX(1);
+}
+
+ul.footer-links li:last-child {
+   margin-bottom: 10px;
+}
+
+.footer-section img {
+   margin-bottom: 20px;
+   height: 40px;
+}
+
+/*Imágenes redes sociales*/
+footer .social-icons {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+footer .social-icons a {
+   display: flex;
+   align-items: center;
+}
+
+footer .social-icons img {
+   height: 18px;
+   margin: 10px;
+}
