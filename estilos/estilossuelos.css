@@ -1,0 +1,380 @@
+/* Estilos generales para el body */
+body,
+html {
+   margin: 0;
+   padding: 0;
+   font-family: 'Montserrat', sans-serif;
+   background-color: #fcfcf7;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+/* Contenedor principal */
+.main-container {
+   flex: 1;
+   /*MANTENER CONTENEDOR DE FOOTER ABAJO DEL TODO DE LA PÁGINA*/
+}
+
+/* BARRA DE NAVEGACIÓN */
+.navbar {
+   background-color: rgba(0, 0, 0, 0.8);
+   /*TRANSPARENCIA*/
+   position: fixed;
+   width: 100%;
+   z-index: 1000;
+}
+
+.container {
+   width: 70%;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 0;
+}
+
+.logo img {
+   height: 50px;
+}
+
+ul {
+   list-style: none;
+   display: flex;
+   margin: 0;
+   padding: 0;
+}
+
+ul li {
+   margin: 0 15px;
+   text-transform: capitalize;
+   position: relative;
+}
+
+ul li a {
+   text-decoration: none;
+   color: white;
+   transition: color 0.3s ease;
+}
+
+ul li a:after {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background-color: #fff5cf;
+   bottom: -4px;
+   left: 0;
+   transform: scaleX(0);
+   transition: transform 0.3s ease;
+   /*TRANSICIÓN DE LÍNEA*/
+}
+
+ul li a:hover {
+   color: #e0d7c0;
+}
+
+ul li a:hover:after {
+   transform: scaleX(1);
+}
+
+.menu-btn {
+   display: none;
+   cursor: pointer;
+}
+
+.bar {
+   width: 25px;
+   height: 3px;
+   background-color: #fff;
+   margin: 5px 0;
+}
+
+/* menu hamburguesa móvil */
+@media (max-width: 768px) {
+   .menu-btn {
+      display: block;
+   }
+
+   .logo img {
+      height: 40px;
+   }
+
+   .navbar-items {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1;
+   }
+
+   .navbar-items.active {
+      display: flex;
+   }
+
+   ul {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+   }
+
+   .navbar-items li {
+      margin-bottom: 30px; 
+   }
+
+   ul li a:after {
+      display: none; 
+   }
+
+   ul li a:hover {
+      color: white; 
+   }
+
+   ul li a:hover:after {
+      transform: scaleX(0); 
+   }
+}
+
+/*FIN BARRA DE NAVEGACIÓN*/
+
+/* Imagen principal efecto parallax*/
+.imagen-principal-suelos-parallax {
+   width: 100%;
+   height: 80vh;
+   overflow: hidden;
+   position: relative;
+}
+
+.parallax {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 150%;
+   transform: translateY(0);
+   transition: transform 0.3s ease-out;
+   /* Agrega una transición suave para el efecto parallax */
+}
+
+.parallax img {
+   width: 100%;
+   height: auto;
+   display: block;
+}
+
+/* Poner la imagen superpuesta sobre la imagen principal de la galería*/
+.suelos-png {
+   position: absolute;
+   top: 60%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 2;
+   height: auto;
+}
+
+.linea-principal {
+   width: 100%;
+   height: 3rem;
+   background-color: black;
+   border: none;
+}
+
+/* Media query solo para pantallas de móvil imagen principal */
+@media only screen and (max-width: 767px) {
+
+   body,
+   html {
+      overflow-x: hidden;
+   }
+
+   .imagen-principal-suelos-parallax,
+   .parallax,
+   .linea-suelos,
+   .parallax img,
+   .linea-principal,
+   .linea-suelos-premium,
+   .linea-suelos-standard {
+      display: none;
+   }
+
+   .navbar {
+      position: relative;
+   }
+}
+
+/* Doy estilo a todo, h1, líneas y párrafos*/
+h1 {
+   font-size: 2rem;
+   color: black;
+   text-align: center;
+   margin: 2.5rem auto 1rem auto;
+   text-transform: capitalize;
+}
+
+h2 {
+   font-size: 1.7rem;
+   color: black;
+   text-align: center;
+   margin: 0rem auto 1rem auto;
+   text-transform: capitalize;
+}
+
+.linea-suelos {
+   width: 30%;
+   height: 1px;
+   background-color: black;
+   margin: 0 auto 2rem auto;
+}
+
+.linea-suelos-standard {
+   width: 14.5%;
+   height: 1px;
+   background-color: black;
+   margin: 0 auto 2rem auto;
+}
+
+.linea-suelos-premium {
+   width: 14%;
+   height: 1px;
+   background-color: black;
+   margin: 0 auto 2rem auto;
+}
+
+.texto {
+   color: black;
+   margin: 0 30rem;
+   text-align: center;
+   line-height: 1.6rem;
+   font-size: 1rem;
+}
+
+/*Doy estilo a los dos carrusel*/
+.carrusel{
+   border-radius: 20px;
+}
+
+.slider-suelos-standard{
+   margin-top: 2rem;
+}
+
+.slider-suelos-premium {
+   margin: 2rem 0 4rem 0;
+}
+
+.solo-movil{
+   display: none;
+}
+
+/*dispositivos móviles h1, quitar slider, poner solo movil*/
+@media only screen and (max-width: 767px) {
+   h1 {
+      font-size: 24px;
+      margin: 1rem 20px 20px 20px;
+   }
+
+   h2{
+      font-size: 18px;
+   }
+
+   .texto {
+      margin: 0 20px !important;
+      font-size: 14px;
+   }
+
+   .slider-suelos-standard,
+   .slider-suelos-premium {
+      display: none !important;
+   }
+   .solo-movil{
+      display: block;
+      text-align: center;
+   }
+   .solo-movil img{
+      max-width: 90%;
+      margin: 10px;
+      height: auto;
+      border-radius: 20px;
+   }  
+   .espacio{
+      margin-bottom: 50px;
+   }
+}
+
+/* FOOTER */
+footer {
+   background-color: black;
+   color: white;
+   padding: 20px 0;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.footer-section {
+   text-align: center;
+   margin: 10px;
+   font-size: 11px;
+}
+
+ul.footer-links {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+ul.footer-links li a {
+   text-decoration: none;
+   color: white;
+   transition: color 0.3s ease;
+   position: relative;
+}
+
+ul.footer-links li a::after {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 1px;
+   background-color: #e0d7c0;
+   bottom: -3px;
+   left: 0;
+   transform: scaleX(0);
+   transition: transform 0.3s ease;
+}
+
+ul.footer-links li a:hover::after {
+   transform: scaleX(1);
+}
+
+ul.footer-links li:last-child {
+   margin-top: auto;
+}
+
+.footer-section img {
+   margin-bottom: 20px;
+   height: 40px;
+}
+
+/*Imágenes redes sociales*/
+footer .social-icons {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+footer .social-icons a {
+   display: flex;
+   align-items: center;
+}
+
+footer .social-icons img {
+   height: 18px;
+   margin: 10px;
+}
