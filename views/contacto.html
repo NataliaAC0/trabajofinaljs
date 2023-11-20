@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos/estiloscontacto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>The Kitchen's House</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script src="../js/jscontacto.js"></script>
+</head>
+
+<body>
+    <!-- BARRA NAVEGACIÓN -->
+    <div class="main-container">
+        <nav class="navbar">
+           <div class="container">
+              <div class="logo">
+                 <a href="../index.html"><img src="../assets/images/logoblanco.png" alt="Logo"></a>
+              </div>
+              <div class="menu-btn" id="menu-btn">
+                 <div class="bar"></div>
+                 <div class="bar"></div>
+                 <div class="bar"></div>
+              </div>
+              <ul class="navbar-items" id="navbar-items">
+                 <li><a href="../index.html">Inicio</a></li>
+                 <li><a href="../views/galeria.html">Galería</a></li>
+                 <li><a href="../views/presupuesto.html">Presupuesto</a></li>
+                 <li><a href="../views/contacto.html">Contacto</a></li>
+              </ul>
+           </div>
+        </nav>
+     </div>
+    <!-- FIN DE BARRA DE NAVEGACIÓN-->
+
+    <!-- CONTENIDO PÁGINA -->
+    <!-- FOTO PRINCIPAL DEL CONTENIDO DE LA PÁGINA -->
+    <div class="imagen-principal-contacto-parallax">
+        <div class="parallax"><img src="../assets/images/contacto-foto.jpg" alt="Contacto"></div>
+        <div class="contacto-png">
+            <img src="../assets/images/contacto.png" alt="contacto">
+        </div>
+    </div>
+    <div class="linea-principal"></div>
+    <h1 class="contacto-h1">Contacto</h1>
+
+    <section class="container-info">
+        <div id="info">
+            <h2>Información de contacto</h2>
+            <div class="info-item">
+                <img src="../assets/images/contacto/ubicacion-icon.png" alt="Ubicación">
+                <p>Arturo Soria 58, 28043, Madrid, España</p>
+            </div>
+            <div class="info-item">
+                <img src="../assets/images/contacto/telefono-icon.png" alt="telefono">
+                <p>+34 669 345 234</p>
+            </div>
+            <div class="info-item">
+                <img src="../assets/images/contacto/email-icon.png" alt="email">
+                <p>info@thekitchenshouse.com</p>
+            </div>
+        </div>
+        <div id="mapa" style="height: 400px;"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-section">
+            <h3>Ubicación</h3>
+            <p>Arturo Soria 58 </p>
+            <p>28043</p>
+            <p>Madrid, España</p>
+        </div>
+        <div class="footer-section">
+            <h3>Enlaces</h3>
+            <ul class="footer-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../views/galeria.html">Galería</a></li>
+                <li><a href="../views/presupuesto.html">Presupuesto</a></li>
+                <li><a href="../views/contacto.html">Contacto</a></li>
+                <li><a href="../views/vitroceramicas-y-encimeras.html">Vitrocerámicas y encimeras</a></li>
+                <li><a href="../views/iluminacion.html">Iluminación</a></li>
+                <li><a href="../views/suelos.html">Suelos</a></li>
+                <li><a href="../views/accesorios-funcionales.html">Accesorios Funcionales</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Síguenos</h3>
+            <div class="social-icons">
+                <a href="#"><img src="../assets/images/icons/facebook-app-symbol.png" alt="Facebook"></a>
+                <a href="#"><img src="../assets/images/icons/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="../assets/images/icons/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="../assets/images/icons/tik-tok.png" alt="TikTok"></a>
+            </div>
+        </div>
+    </footer>
+    <!-- FIN DEL FOOTER -->
+</body>
+
+</html>

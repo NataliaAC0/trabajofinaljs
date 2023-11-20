@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./estilos/estilosindex.css">
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="./js/jsindex.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <title>The Kitchen's House</title>
+</head>
+
+<body>
+   <!-- BARRA NAVEGACIÓN -->
+   <div class="main-container">
+      <nav class="navbar">
+         <div class="container">
+            <div class="logo">
+               <a href="./index.html"><img src="./assets/images/logoblanco.png" alt="Logo"></a>
+            </div>
+            <div class="menu-btn" id="menu-btn">
+               <div class="bar"></div>
+               <div class="bar"></div>
+               <div class="bar"></div>
+            </div>
+            <ul class="navbar-items" id="navbar-items">
+               <li><a href="./index.html">Inicio</a></li>
+               <li><a href="./views/galeria.html">Galería</a></li>
+               <li><a href="./views/presupuesto.html">Presupuesto</a></li>
+               <li><a href="./views/contacto.html">Contacto</a></li>
+            </ul>
+         </div>
+      </nav>
+   </div>
+
+   <!-- CONTENIDO PÁGINA -->
+   <!--IMAGEN PRINCIPAL-->
+   <div class="imagen-principal-parallax">
+      <div class="parallax">
+         <img src="./assets/images/imagenprincipal.jpg" alt="The Kitchen's House">
+      </div>
+   </div>
+   <div class="linea-principal"></div>
+   <!--PRIMERA SECCIÓN SOBRE NOSOTROS-->
+   <section>
+      <div class="sobre-nosotros">
+         <h1>Sobre nosotros</h1>
+         <div class="linea-sobre-nosotros"></div>
+         <!-- Aquí va a haber una foto y un texto al lado (SOBRE NOSOTROS)-->
+         <div class="texto-imagen-sobrenosotros">
+            <p class="texto-sobrenosotros">En <b>The Kitchen’s House</b>, nos enorgullecemos de ser pioneros en el mundo
+               de las
+               <b>reformas de cocina</b> en nuestro establecimiento desde <b>2015</b>. Somos un equipo apasionado de
+               profesionales
+               dedicados a ofrecer <b>soluciones personalizadas</b> y de alta calidad para transformar cocinas en
+               espacios
+               funcionales y estéticamente atractivos. Nos destacamos por nuestra experiencia, integridad y compromiso
+               con la excelencia en cada proyecto.
+            </p>
+            <img src="./assets/images/index/sobre-nosotros.jpg" alt="Sobre Nosotros">
+         </div>
+      </div>
+   </section>
+   <!--SEGUNDA SECCIÓN NUESTROS SERVICIOS-->
+   <section>
+      <div class="nuestros-servicios">
+         <h1>Nuestros servicios</h1>
+         <div class="linea-nuestros-servicios"></div>
+         <!-- Aquí va a haber una foto y un texto al lado (SOBRE NOSOTROS)-->
+         <div class="texto-imagen-nuestrosservicios">
+            <img src="./assets/images/index/que-hacemos.jpg" alt="Nuestros servicios">
+            <p class="texto-nuestrosservicios">En <b>The Kitchen’s House</b>, nos especializamos en la creación de
+               cocinas
+               excepcionales mediante un enfoque integral. Desde el diseño personalizado que se adapta a sus necesidades
+               y estilo hasta la <b>instalación de iluminación moderna</b> que crea una atmósfera acogedora, cada
+               detalle
+               cuenta. Utilizamos <b>encimeras y vitrocerámicas</b> de primera calidad para garantizar durabilidad y
+               elegancia.
+               Además, ofrecemos una <b>variedad de opciones de suelos resistentes y accesorios funcionales</b> que
+               complementan el diseño general de la cocina.
+               <br><br>
+               Nuestro compromiso no se limita solo a los resultados visuales; nos esforzamos por ofrecer una
+               experiencia sin complicaciones a nuestros clientes. Trabajamos estrechamente con usted, desde la
+               concepción hasta la finalización del proyecto, para asegurarnos de que su visión se haga realidad.
+            </p>
+         </div>
+      </div>
+   </section>
+   <!-- TERCERA SECCIÓN CARRUSEL CON BOTONES PLUGIN SWIPER-->
+   <section>
+      <div class="nuestros-productos">
+         <h1>Nuestros productos</h1>
+         <div class="linea-nuestros-servicios"></div>
+         <div class="solo-movil">
+            <img src="./assets/images/index/movil/accesorios.jpg" alt="accesorios">
+            <a href="./views/accesorios-funcionales.html"><button>Ver Accesorios</button></a> 
+            <img src="./assets/images/index/movil/suelos.jpg" alt="suelos">
+            <a href="./views/suelos.html"><button>Ver Suelos</button></a>
+            <img src="./assets/images/index/movil/iluminacion.jpg" alt="iluminacion">
+            <a href="./views/iluminacion.html"><button>Ver Iluminación</button></a>
+            <img src="./assets/images/index/movil/vitroceramicas.jpg" alt="vitrocerámicas">
+            <a href="./views/vitroceramicas-y-encimeras.html"><button>Ver Vitrocerámicas</button></a>
+        </div>
+        
+
+         <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+               <div class="swiper-slide">
+                  <img src="./assets/images/index/iluminacion3.jpg">
+                  <a class="button-swiper" href="./views/iluminacion.html">Descubre</a>
+               </div>
+               <div class="swiper-slide">
+                  <img src="./assets/images/index/encimeras-y-vitroceramicas.jpg">
+                  <a class="button-swiper" href="./views/vitroceramicas-y-encimeras.html">Descubre</a>
+               </div>
+               <div class="swiper-slide">
+                  <img src="./assets/images/index/suelos3.jpg">
+                  <a class="button-swiper" href="./views/suelos.html">Descubre</a>
+               </div>
+               <div class="swiper-slide">
+                  <img src="./assets/images/index/accesorios-funcionales.jpg">
+                  <a class="button-swiper" href="./views/accesorios-funcionales.html">Descubre</a>
+               </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+         </div>
+      </div>
+   </section>
+   <!-- CUARTA SECCIÓN JSON NUESTRO EQUIPO -->
+   <section class="nuestroequipo">
+      <h1>Nuestro equipo</h1>
+      <div class="linea-nuestro-equipo"></div>
+      <div class="nuestro-equipo">
+         <!-- Archivo json -->
+      </div>
+   </section>
+   <!--QUINTA SECCIÓN NUESTRO COMPROMISO ICONOS + TEXTO-->
+   <section class="nuestrocompromiso">
+      <h1>Nuestro compromiso</h1>
+      <div class="linea-nuestro-compromiso"></div>
+      <div class="nuestrocompromiso-container">
+         <div class="iconos-nuestro-compromiso">
+            <img class="icon" src="./assets/images/index/index-icons/telefono.png" alt="atencion personalizada">
+            <div class="negrita">Atención personalizada</div>
+            <div class="texto-normal">Pide cita previa</div>
+         </div>
+         <div class="iconos-nuestro-compromiso">
+            <img class="icon" src="./assets/images/index/index-icons/personalizacion.png" alt="personalizacion">
+            <div class="negrita">Personalización y </div>
+            <div class="negrita">muebles a medida</div>
+         </div>
+         <div class="iconos-nuestro-compromiso">
+            <img class="icon" src="./assets/images/index/index-icons/parking.png" alt="parking">
+            <div class="negrita">Parking gratuito 2h</div>
+            <div class="texto-normal">Arturo Soria, 58</div>
+         </div>
+         <div class="iconos-nuestro-compromiso">
+            <img class="icon" src="./assets/images/index/index-icons/financiacion.png" alt="financiacion">
+            <div class="negrita">Financiación gratuita</div>
+            <div class="texto-normal">hasta 12 meses gratuita</div>
+         </div>
+         <div class="iconos-nuestro-compromiso">
+            <img class="icon" src="./assets/images/index/index-icons/transporte.png" alt="transporte">
+            <div class="negrita">Medición, transporte</div>
+            <div class="negrita">y montaje gratuito</div>
+         </div>
+      </div>
+   </section>
+   <!-- FOOTER -->
+   <footer>
+      <div class="footer-section">
+         <h3>Ubicación</h3>
+         <p>Arturo Soria 58 </p>
+         <p>28043</p>
+         <p>Madrid, España</p>
+      </div>
+      <div class="footer-section">
+         <h3>Enlaces</h3>
+         <ul class="footer-links">
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./views/galeria.html">Galería</a></li>
+            <li><a href="./views/presupuesto.html">Presupuesto</a></li>
+            <li><a href="./views/contacto.html">Contacto</a></li>
+            <li><a href="./views/vitroceramicas-y-encimeras.html">Vitrocerámicas y encimeras</a></li>
+            <li><a href="./views/iluminacion.html">Iluminación</a></li>
+            <li><a href="./views/suelos.html">Suelos</a></li>
+            <li><a href="./views/accesorios-funcionales.html">Accesorios Funcionales</a></li>
+         </ul>
+      </div>
+      <div class="footer-section">
+         <h3>Síguenos</h3>
+         <div class="social-icons">
+            <a href="#"><img src="./assets/images/icons/facebook-app-symbol.png" alt="Facebook"></a>
+            <a href="#"><img src="./assets/images/icons/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="./assets/images/icons/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="./assets/images/icons/tik-tok.png" alt="TikTok"></a>
+         </div>
+      </div>
+   </footer>
+   <!-- FIN DEL FOOTER -->
+   <!-- SCRIPT PARA INICIALIZAR SWIPER -->
+   <script>
+      var swiper = new Swiper(".mySwiper", {
+         loop: true,
+         pagination: {
+            el: ".swiper-pagination",
+            type: "progressbar",
+         },
+         navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+         },
+      });
+   </script>
+</body>
+
+</html>

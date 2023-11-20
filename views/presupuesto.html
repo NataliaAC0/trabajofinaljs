@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos/estilospresupuesto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/jspresupuesto.js"></script>
+    <title>The Kitchen's House</title>
+</head>
+
+<body>
+    <!-- BARRA NAVEGACIÓN -->
+    <div class="main-container">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="../index.html"><img src="../assets/images/logoblanco.png" alt="Logo"></a>
+                </div>
+                <div class="menu-btn" id="menu-btn">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="navbar-items" id="navbar-items">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../views/galeria.html">Galería</a></li>
+                    <li><a href="../views/presupuesto.html">Presupuesto</a></li>
+                    <li><a href="../views/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- CONTENIDO PÁGINA -->
+    <!-- FOTO PRINCIPAL DEL CONTENIDO DE LA PÁGINA -->
+    <div class="imagen-principal-presupuesto-parallax">
+        <div class="parallax"><img src="../assets/images/presupuesto-foto.jpg" alt="Presupuesto"></div>
+        <div class="presupuesto-png">
+            <img src="../assets/images/presupuesto.png" alt="galeria">
+        </div>
+    </div>
+
+    <div class="linea-principal"></div>
+    <!-- Empezamos el formulario que contendrá nombre, apellidos, teléfono de contacto, correo electrónico, un desplegable con los productos que el usuario podrá elegir más de 1 y productos extra-->
+    <section>
+        <div class="texto-solo-movil">
+            <h1>Presupuesto</h1>
+        </div>
+        <form id="form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" required>
+
+            <label for="telefono">Teléfono de contacto:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <div class="secciones">
+                <label class="seccion-negrita">Elige tus productos:</label>
+                <div class="checkbox-group" id="productosGroup">
+                    <div class="productos">
+                        <input type="checkbox" id="encimerasCheckbox" name="productos" value="producto-encimeras">
+                        <label for="encimerasCheckbox">Encimeras</label>
+                    </div>
+                    <div class="productos">
+                        <input type="checkbox" id="encimerasPremiumCheckbox" name="productos"
+                            value="producto-encimeras2">
+                        <label for="encimerasPremiumCheckbox">Encimeras Premium</label>
+                    </div>
+                    <div class="productos">
+                        <input type="checkbox" id="iluminacionCheckbox" name="productos" value="producto-iluminacion">
+                        <label for="iluminacionCheckbox">Iluminación</label>
+                    </div>
+                    <div class="productos">
+                        <input type="checkbox" id="iluminacionPremiumCheckbox" name="productos"
+                            value="producto-iluminacion2">
+                        <label for="iluminacionPremiumCheckbox">Iluminación Premium</label>
+                    </div>
+                    <div class="productos">
+                        <input type="checkbox" id="suelosCheckbox" name="productos" value="producto-suelos">
+                        <label for="suelosCheckbox">Suelos</label>
+                    </div>
+                    <div class="productos">
+                        <input type="checkbox" id="suelosPremiumCheckbox" name="productos" value="producto-suelos2">
+                        <label for="suelosPremiumCheckbox">Suelos Premium</label>
+                    </div>
+                    <div class="productos">
+                        <input type="checkbox" id="vitroceramicasCheckbox" name="productos"
+                            value="producto-vitroceramicas">
+                        <label for="vitroceramicasCheckbox">Vitrocerámicas</label>
+                    </div>
+                    <div class="productos">
+                        <input type="checkbox" id="vitroceramicasPremiumCheckbox" name="productos"
+                            value="producto-vitroceramicas2">
+                        <label for="vitroceramicasPremiumCheckbox">Vitrocerámicas Premium</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <label for="plazo">Plazo (días):</label>
+            <select id="plazo" name="plazo" required>
+                <option value="" disabled selected hidden>Selecciona un plazo</option>
+                <option value="3">3 días</option>
+                <option value="5">5 días</option>
+                <option value="7">7 días</option>
+                <option value="10">10 días</option>
+            </select>
+
+            <div class="extras">
+                <label class="seccion-negrita">Selecciona tus extras:</label>
+                <div>
+                    <input type="checkbox" id="extra1" name="extras" value="cubos">
+                    <label for="extra1">Cubos de basura</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="extra2" name="extras" value="cuberteria">
+                    <label for="extra2">Compartimentos de cubertería</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="extra3" name="extras" value="especieros">
+                    <label for="extra3">Compartimentos de especieros</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="extra4" name="extras" value="estropajos">
+                    <label for="extra4">Accesorios para estropajos</label>
+                </div>
+            </div>
+            <div class="espacio"></div>
+            <input type="checkbox" id="aceptar" name="aceptar" required>
+            <label for="aceptar" class="etiqueta-checkbox">Aceptar condiciones</label>
+
+
+            <div class="espacio"></div>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Resetear">
+            <div id="presupuesto-final"></div>
+        </form>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-section">
+            <h3>Ubicación</h3>
+            <p>Arturo Soria 58 </p>
+            <p>28043</p>
+            <p>Madrid, España</p>
+        </div>
+        <div class="footer-section">
+            <h3>Enlaces</h3>
+            <ul class="footer-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../views/galeria.html">Galería</a></li>
+                <li><a href="../views/presupuesto.html">Presupuesto</a></li>
+                <li><a href="../views/contacto.html">Contacto</a></li>
+                <li><a href="../views/vitroceramicas-y-encimeras.html">Vitrocerámicas y encimeras</a></li>
+                <li><a href="../views/iluminacion.html">Iluminación</a></li>
+                <li><a href="../views/suelos.html">Suelos</a></li>
+                <li><a href="../views/accesorios-funcionales.html">Accesorios Funcionales</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Síguenos</h3>
+            <div class="social-icons">
+                <a href="#"><img src="../assets/images/icons/facebook-app-symbol.png" alt="Facebook"></a>
+                <a href="#"><img src="../assets/images/icons/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="../assets/images/icons/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="../assets/images/icons/tik-tok.png" alt="TikTok"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

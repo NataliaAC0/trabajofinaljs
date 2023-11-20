@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../estilos/estilosgaleria.css">
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="../js/jsgaleria.js"></script>
+   <title>The Kitchen's House</title>
+</head>
+<body>
+   <!-- BARRA NAVEGACIÓN -->
+   <div class="main-container">
+      <nav class="navbar">
+         <div class="container">
+            <div class="logo">
+               <a href="../index.html"><img src="../assets/images/logoblanco.png" alt="Logo"></a>
+            </div>
+            <div class="menu-btn" id="menu-btn">
+               <div class="bar"></div>
+               <div class="bar"></div>
+               <div class="bar"></div>
+            </div>
+            <ul class="navbar-items" id="navbar-items">
+               <li><a href="../index.html">Inicio</a></li>
+               <li><a href="../views/galeria.html">Galería</a></li>
+               <li><a href="../views/presupuesto.html">Presupuesto</a></li>
+               <li><a href="../views/contacto.html">Contacto</a></li>
+            </ul>
+         </div>
+      </nav>
+   </div>
+   <!-- CONTENIDO PÁGINA -->
+   <!-- FOTO PRINCIPAL DEL CONTENIDO DE LA PÁGINA -->
+   <div class="imagen-principal-galeria-parallax">
+      <div class="parallax"><img src="../assets/images/galeria-foto.jpg" alt="Galeria"></div>
+      <div class="galeria-png">
+         <img src="../assets/images/galeria.png" alt="galeria">
+      </div>
+   </div>
+   <div class="linea-principal"></div>
+   <!-- Galería -->
+   <section class="galeria">
+      <h1>Galería</h1>
+      <div class="gallery-container" id="gallery">
+         <!-- IMÁGENES -->
+      </div>
+      <!-- ABRIR Y CERRAR IMAGEN -->
+      <div class="modal" id="modal">
+         <span class="close" id="close">&times;</span>
+         <img src="#" class="modal-content" id="modal-image" alt="imagen">
+         <button class="nav-btn" id="prev-btn">&lt;</button>
+         <button class="nav-btn" id="next-btn">&gt;</button>
+      </div>
+   </section>
+   <!-- FOOTER -->
+   <footer>
+      <div class="footer-section">
+         <h3>Ubicación</h3>
+         <p>Arturo Soria 58 </p>
+         <p>28043</p>
+         <p>Madrid, España</p>
+      </div>
+      <div class="footer-section">
+         <h3>Enlaces</h3>
+         <ul class="footer-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../views/galeria.html">Galería</a></li>
+            <li><a href="../views/presupuesto.html">Presupuesto</a></li>
+            <li><a href="../views/contacto.html">Contacto</a></li>
+            <li><a href="../views/vitroceramicas-y-encimeras.html">Vitrocerámicas y encimeras</a></li>
+            <li><a href="../views/iluminacion.html">Iluminación</a></li>
+            <li><a href="../views/suelos.html">Suelos</a></li>
+            <li><a href="../views/accesorios-funcionales.html">Accesorios Funcionales</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+         <h3>Síguenos</h3>
+         <div class="social-icons">
+            <a href="#"><img src="../assets/images/icons/facebook-app-symbol.png" alt="Facebook"></a>
+            <a href="#"><img src="../assets/images/icons/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="../assets/images/icons/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="../assets/images/icons/tik-tok.png" alt="TikTok"></a>
+         </div>
+      </div>
+   </footer>
+</body>
+</html>
