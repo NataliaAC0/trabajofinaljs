@@ -1,0 +1,381 @@
+/* Estilos generales para el body */
+body,
+html {
+   margin: 0;
+   padding: 0;
+   font-family: 'Montserrat', sans-serif;
+   background-color: #fcfcf7;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+/* Contenedor principal */
+.main-container {
+   flex: 1;
+   /*MANTENER CONTENEDOR DE FOOTER ABAJO DEL TODO DE LA PÁGINA*/
+}
+
+/* BARRA DE NAVEGACIÓN */
+.navbar {
+   background-color: rgba(0, 0, 0, 0.8);
+   /*TRANSPARENCIA*/
+   position: fixed;
+   width: 100%;
+   z-index: 1000;
+}
+
+.container {
+   width: 70%;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 0;
+}
+
+.logo img {
+   height: 50px;
+}
+
+ul {
+   list-style: none;
+   display: flex;
+   margin: 0;
+   padding: 0;
+}
+
+ul li {
+   margin: 0 15px;
+   text-transform: capitalize;
+   position: relative;
+}
+
+ul li a {
+   text-decoration: none;
+   color: white;
+   transition: color 0.3s ease;
+}
+
+ul li a:after {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background-color: #fff5cf;
+   bottom: -4px;
+   left: 0;
+   transform: scaleX(0);
+   transition: transform 0.3s ease;
+   /*TRANSICIÓN DE LÍNEA*/
+}
+
+ul li a:hover {
+   color: #e0d7c0;
+}
+
+ul li a:hover:after {
+   transform: scaleX(1);
+}
+
+.menu-btn {
+   display: none;
+   cursor: pointer;
+}
+
+.bar {
+   width: 25px;
+   height: 3px;
+   background-color: #fff;
+   margin: 5px 0;
+}
+
+/* menu hamburguesa móvil */
+@media (max-width: 768px) {
+   .menu-btn {
+      display: block;
+   }
+
+   .logo img {
+      height: 40px;
+   }
+
+   .navbar-items {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1;
+   }
+
+   .navbar-items.active {
+      display: flex;
+   }
+
+   ul {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+   }
+
+   .navbar-items li {
+      margin-bottom: 30px; 
+   }
+
+   ul li a:after {
+      display: none; 
+   }
+
+   ul li a:hover {
+      color: white; 
+   }
+
+   ul li a:hover:after {
+      transform: scaleX(0); 
+   }
+}
+
+/* Imagen principal efecto parallax*/
+.imagen-principal-presupuesto-parallax {
+   width: 100%;
+   height: 80vh;
+   overflow: hidden;
+   position: relative;
+}
+
+.parallax {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 150%;
+   transform: translateY(0);
+   transition: transform 0.3s ease-out;
+}
+
+.parallax img {
+   width: 100%;
+   height: auto;
+   display: block;
+}
+
+/* Poner la imagen superpuesta sobre la imagen principal de la galería*/
+.presupuesto-png {
+   position: absolute;
+   top: 60%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 2;
+   height: auto;
+}
+
+.linea-principal {
+   width: 100%;
+   height: 3rem;
+   background-color: black;
+   border: none;
+}
+
+.texto-solo-movil h1 {
+   display: none;
+}
+/* version movil imagen principal */
+@media only screen and (max-width: 767px) {
+   body,
+   html {
+      overflow-x: hidden;
+   }
+   .imagen-principal-presupuesto-parallax,
+   .imagen-principal-parallax,
+   .parallax,
+   .parallax img,
+   .linea-principal, .presupuesto-png {
+      display: none;
+   }
+   .navbar {
+      position: relative;
+   }
+   .texto-solo-movil h1{
+      display: block;
+      text-align: center;
+      font-size: 24px;
+      margin-top: 2rem;
+   }
+}
+
+/* FORMULARIO*/
+form {
+   width: 80%;
+   max-width: 50%;
+   margin: 4rem auto;
+   padding: 3rem;
+   border: 1px solid #ccc;
+   border-radius: 50px;
+   background-color: #f9f9f9;
+}
+
+/* versión móvil formulario*/
+@media only screen and (max-width: 767px) {
+   form {
+      align-items: center;
+      width: 85%;
+      max-width: 80%;
+      margin: 1rem 0rem 2rem 0.5rem;
+      padding: 30px;
+      border-radius: 10px;
+
+   }
+}
+
+label {
+   margin-bottom: 10px;
+   display: block;
+}
+
+.seccion-negrita {
+   font-weight: 600;
+}
+
+select,
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+   width: calc(100% - 22px);
+   padding: 10px;
+   margin-bottom: 15px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   font-size: 16px;
+   display: block;
+}
+
+.checkbox-group div {
+   display: block;
+}
+
+.checkbox-group input[type="checkbox"],
+.checkbox-group label {
+   display: inline-block;
+}
+
+.extras div {
+   display: block;
+}
+
+.extras input[type="checkbox"],
+.extras label {
+   display: inline-block;
+}
+
+.etiqueta-checkbox {
+   display: inline-block;
+   font-style: italic;
+}
+
+.espacio {
+   margin-top: 1rem;
+}
+
+input[type="submit"],
+input[type="reset"] {
+   background-color: #4caf50;
+   color: white;
+   border: none;
+   padding: 12px 20px;
+   text-align: center;
+   text-decoration: none;
+   font-size: 16px;
+   margin-right: 10px;
+   cursor: pointer;
+   border-radius: 5px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+   background-color: #2d8531;
+}
+
+#presupuesto-final {
+   margin-top: 20px;
+   font-size: 18px;
+   font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+   background-color: black;
+   color: white;
+   padding: 20px 0;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.footer-section {
+   text-align: center;
+   margin: 10px;
+   font-size: 11px;
+}
+
+ul.footer-links {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+ul.footer-links li a {
+   text-decoration: none;
+   color: white;
+   transition: color 0.3s ease;
+   position: relative;
+}
+
+ul.footer-links li a::after {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 1px;
+   background-color: #e0d7c0;
+   bottom: -3px;
+   left: 0;
+   transform: scaleX(0);
+   transition: transform 0.3s ease;
+}
+
+ul.footer-links li a:hover::after {
+   transform: scaleX(1);
+}
+
+ul.footer-links li:last-child {
+   margin-top: auto;
+}
+
+.footer-section img {
+   margin-bottom: 20px;
+   height: 40px;
+}
+
+/*Imágenes redes sociales*/
+footer .social-icons {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+footer .social-icons a {
+   display: flex;
+   align-items: center;
+}
+
+footer .social-icons img {
+   height: 18px;
+   margin: 10px;
+}
